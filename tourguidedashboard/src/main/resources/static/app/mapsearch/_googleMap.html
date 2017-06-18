@@ -1,0 +1,10 @@
+<form class="form-signin">
+    <GoogleMapAddressInput  placeholderText='Start Address'></GoogleMapAddressInput>
+    <GoogleMapAddressInput  placeholderText='Destination Address'></GoogleMapAddressInput>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="routeAddress(startAddress,destinationAddress);">Map my route</button>
+</form>
+
+<div class="list-group" *ngFor="#address of routeAddress">
+    <a href="#" class="list-group-item" >{{address.matchedAddress}}</a>
+</div>

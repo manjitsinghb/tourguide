@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"tourguide.service.rest","com.tourguide.googlemaps"})
+@ComponentScan(basePackages = {"tourguide.service","com.tourguide.googlemaps"})
 public class Application {
 
     public static void main(String args[]) {

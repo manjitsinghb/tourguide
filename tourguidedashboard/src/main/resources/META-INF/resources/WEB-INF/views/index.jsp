@@ -4,10 +4,6 @@
 </head>
 <body>
     <jsp:include page="header.jsp" />
-    <div class="jumbotron">
-          <div class="container">
-
-          </div>
-    </div>
+            <index></index>
 </body>
 </html>

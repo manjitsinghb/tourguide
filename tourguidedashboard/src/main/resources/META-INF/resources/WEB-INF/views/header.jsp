@@ -13,13 +13,17 @@
 
     <script>
       System.config({
+        transpiler: 'typescript',
+        typescriptOptions: {
+            emitDecoratorMetadata: true
+        },
         packages: {
           app: {
             defaultExtension: 'js',
           }
         }
       });
-      System.import('app/boot')
+      System.import('index.boot.js')
             .then(null, console.error.bind(console));
     </script>
     <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
