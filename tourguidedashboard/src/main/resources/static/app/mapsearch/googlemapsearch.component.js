@@ -23,6 +23,7 @@ export class GoogleMapSearchAddress {
     }
 
     findMatchingAddress():Observable<MatchedAddress[]> {
+       this.showSuggestions=true;
         if(!this.address) {
             return;
         }
