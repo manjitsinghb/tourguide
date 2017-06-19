@@ -1,8 +1,0 @@
-
-<label for="startPoint" class="sr-only">{{placeholderText}}</label>
-<input id="startPoint" [(ngModel)]="address" class="form-control" (keyup)="findMatchingAddress();" placeholder={{placeholderText}} required="" autofocus="" />
-
-<div class="list-group" *ngFor="#address of matchedAddress" (click)="selectAddress(address);">
-    <a href="#" class="list-group-item" >{{address.matchedAddress}}</a>
-</div>
-
