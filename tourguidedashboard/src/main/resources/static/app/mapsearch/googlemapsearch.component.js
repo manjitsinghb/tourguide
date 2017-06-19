@@ -1,4 +1,4 @@
-import { Component,Input,Output } from 'angular2/core';
+import { Component,Input,Output,EventEmitter } from 'angular2/core';
 import {HttpService} from 'app/common/services/http.services';
 import {MatchedAddress} from 'app/common/domain/matchedAddress.domain';
 
@@ -9,12 +9,17 @@ providers: [HttpService]
 })
 
 export class GoogleMapSearchAddress {
- @Input() placeholderText: string;
-   address : string;
+   @Input() placeholderText: string;
+   @Input() address : string;
+   @Output() addressChange = new EventEmitter<string>();
+   showSuggestions=true;
+
     constructor(private httpService: HttpService){}
 
     selectAddress(selectedAddress : MatchedAddress) {
         this.address = selectedAddress.matchedAddress;
+        this.addressChange.emit(this.address);
+        this.showSuggestions=false;
     }
 
     findMatchingAddress():Observable<MatchedAddress[]> {

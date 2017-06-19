@@ -6,12 +6,12 @@
 </div>
 <div class="container">
     <form class="form-signin">
-        <GoogleMapSearchAddress placeholderText="Start Address"></GoogleMapSearchAddress>
-        <GoogleMapSearchAddress placeholderText="Destination Address"></GoogleMapSearchAddress>
-        <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="routeAddress(startAddress,destinationAddress);">Map my route</button>
+        <GoogleMapSearchAddress [(address)]="startAddress" placeholderText="Start Address"></GoogleMapSearchAddress>
+        <GoogleMapSearchAddress [(address)]="destinationAddress" placeholderText="Destination Address"></GoogleMapSearchAddress>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" (click)="findRoute();">Map my route</button>
     </form>
 
-    <div class="list-group" *ngFor="#address of routeAddress">
-        <a href="#" class="list-group-item" >{{address.matchedAddress}}</a>
+    <div class="list-group" *ngFor="#route of routeAddress">
+        <a href="#" class="list-group-item" >{{route}}</a>
     </div>
 </div>
